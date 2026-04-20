@@ -97,10 +97,6 @@ jobs:
          npm run unit
 
   test-typescript:
-    needs:
-     - lint
-     - coverage-nix
-     - coverage-win
     runs-on: ubuntu-22.04
     permissions:
       contents: read
