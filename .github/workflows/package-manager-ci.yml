@@ -53,6 +53,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     strategy:
+      fail-fast: false
       matrix:
         # Maintenance and active LTS
         node-version: [14, 16, 18, 20]
