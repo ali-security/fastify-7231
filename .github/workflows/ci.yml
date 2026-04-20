@@ -62,7 +62,6 @@ jobs:
          npx license-checker --production --summary --onlyAllow="0BSD;Apache-2.0;BSD-2-Clause;BSD-3-Clause;ISC;MIT;"
 
   test-unit:
-    needs:
     runs-on: ${{ matrix.os }}
     permissions:
       contents: read
