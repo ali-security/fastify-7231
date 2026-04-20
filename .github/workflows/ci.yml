@@ -72,8 +72,10 @@ jobs:
         node-version: [14, 16, 18, 20]
         os: [macos-14, ubuntu-22.04, windows-2022]
         exclude:
-          # excludes node 14 on Windows
+          # excludes node 14 on Windows and macos-14
          - os: windows-2022
+           node-version: 14
+         - os: macos-14
            node-version: 14
 
     steps:
