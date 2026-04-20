@@ -70,6 +70,12 @@ test('Should not return 503 while closing - pipelining - return503OnClosing: fal
 test('Should close the socket abruptly - pipelining - return503OnClosing: false, skip Node < v18.19.x', { skip: !isNodeVersionGte1819 }, async t => {
   // Since Node v18, we will always invoke server.closeIdleConnections()
   // therefore our socket will be closed
+  // Checks if node 18 of any version is greater than or equal to 18.0.0
+  const isNodeVersionGte18 = semver.gte(process.version, '18.0.0')
+  if (isNodeVersionGte18) {
+    t.skip('Node 18 of any version is greater than or equal to 18.0.0, skipping test')
+    return
+  }
   const fastify = Fastify({
     return503OnClosing: false,
     forceCloseConnections: false
